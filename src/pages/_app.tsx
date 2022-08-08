@@ -3,7 +3,7 @@ import superjson from 'superjson';
 
 import { withTRPC } from '@trpc/next';
 
-import { AppRouter } from './api/trpc/[trpc]';
+import { AppRouter } from '../backend/router';
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return <Component {...pageProps} />;
