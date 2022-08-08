@@ -4,6 +4,7 @@ import superjson from 'superjson';
 import { withTRPC } from '@trpc/next';
 
 import { AppRouter } from '../backend/router';
+import '../styles/globals.css';
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return <Component {...pageProps} />;
