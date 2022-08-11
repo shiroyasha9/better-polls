@@ -18,6 +18,7 @@ model PollQuestion {
   endsAt DateTime?
   question String @db.VarChar(5000)
   options Json
+  ownerToken String @db.VarChar(255)
   vote Vote[]
 }
 
