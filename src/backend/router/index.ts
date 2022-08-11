@@ -1,12 +1,10 @@
 import superjson from 'superjson';
 import { z } from 'zod';
 
-import * as trpc from '@trpc/server';
-
+import { createRouter } from './context';
 import { questionRouter } from './questions';
 
-export const appRouter = trpc
-  .router()
+export const appRouter = createRouter()
   .transformer(superjson)
   .query('hello', {
     input: z
