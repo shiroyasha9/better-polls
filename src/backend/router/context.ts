@@ -6,9 +6,7 @@ export async function createContext(opts?: trpcNext.CreateNextContextOptions) {
   // Create your context based on the request object
   // Will be available as `ctx` in all your resolvers
 
-  console.log(opts?.req.cookies['poll-token']);
-
-  return { token: opts?.req.cookies['poll-token'] };
+  return { token: opts?.req.cookies['poll-token'], req: opts?.req };
 }
 type Context = trpc.inferAsyncReturnType<typeof createContext>;
 

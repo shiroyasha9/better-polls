@@ -19,7 +19,6 @@ const QuestionCreator: React.FC = () => {
       disabled={isLoading}
       onKeyDown={event => {
         if (event.key === 'Enter') {
-          console.log(event.currentTarget.value);
           mutate({ question: event.currentTarget.value });
         }
       }}
@@ -34,8 +33,6 @@ const Home: NextPage = () => {
   if (isLoading || !data) {
     return <div>Loading...</div>;
   }
-
-  console.log(data);
 
   return (
     <div className='p-6 flex flex-col'>

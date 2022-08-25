@@ -36,6 +36,11 @@ export default withTRPC<AppRouter>({
      * @link https://trpc.io/docs/ssr
      */
     return {
+      headers() {
+        return {
+          cookie: ctx?.req?.headers.cookie
+        };
+      },
       url: `${getBaseUrl()}/api/trpc`,
       transformer: superjson
       /**
@@ -47,5 +52,5 @@ export default withTRPC<AppRouter>({
   /**
    * @link https://trpc.io/docs/ssr
    */
-  ssr: false
+  ssr: true
 })(MyApp);
